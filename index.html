@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="circle"></div>
+      <p id="loaderText">Processing...</p>
+    </div>
+  </div>
+
+  <!-- Nav bar -->
+  <nav class="navbar">
+    <h1 class="nav-title">GradeCalc</h1>
+    <button id="toggleBtn" class="toggle-btn">View Results</button>
+  </nav>
+
+
+  <div class="container" id="mainView">
+
+    <!-- Header -->
+    <h1>*Student Results*</h1>
+
+    <!-- Student Form -->
+    <div class="form-section">
+      <h2>Add Student</h2>
+      <form id="studentForm">
+        <input type="text" id="nameInput" placeholder="Student name" required />
+        <input type="number" id="scoreInput" placeholder="Score (0 - 100)" min="0" max="100" required />
+        <button type="submit">Add Student</button>
+      </form>
+      <p id="errorMessage" class="error"></p>
+    </div>
+
+    <!-- Result Summary -->
+    <div class="summary-section">
+      <h2>Class Summary</h2>
+      <div id="summary">
+        <p>No students Record</p>
+      </div>
+    </div>
+
+    <!-- Student List -->
+    <div class="list-section">
+      <h2>Students</h2>
+      <div id="studentList"></div>
+    </div>
+
+  </div>
+
+
+  <div id="resultsView" class="hidden">
+    <div class="container">
+      <h2>Results Table</h2>
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
